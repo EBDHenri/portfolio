@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Détecteur de présence</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../includes/projets/projet2.css">
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary mb-4">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="../index.html">← Retour à l'accueil</a>
+        </div>
+    </nav>
+
+
+    <h1> Projet LEO </h1>
+    <h2> Objectif et Contexte </h2>
+
+    <p>
+        Le projet “Leo Robot” est celui qui a occupé tout le second semestre de GEII. L’objectif était de créer,
+        par groupe de trois ou quatre personnes, un robot capable de se frayer un chemin sur un circuit. Pour cela, nous
+        devions mettre en place trois fonctions principales.
+        Premièrement, la détection de balise, en effet, pour visualiser la ligne d’arrivée,
+        le robot devait se référer à une balise placée à cet endroit et tout l’objet de cette partie était de permettre
+        au
+        robot de la détecter et de se diriger vers elle.
+        Ensuite vient le sonar. Il s'agissait là de permettre au robot d’éviter d’éventuels obstacles et ce, grâce à un
+        sonar.
+        Finalement, la partie DTMF permettait de mettre en fonctionnement le robot en tapant un code à 4 chiffres sur un
+        téléphone que le robot doit identifier, et, si la combinaison est bonne, se mettre en mouvement.
+        Ces trois parties ont été réalisées indépendamment les unes des autres et tout le travail de la gestion du robot
+        était de mettre en lien tous ces capteurs et de programmer le comportement du robot en fonction des ces
+        différentes
+        situations.
+        La finalité du projet était de participer à une course d'obstacle qui s’est déroulée à l’IUT de Nantes le Lundi
+        26
+        juin 2023.
+    </p>
+    <p>
+        Durant ce projet mon rôle à donc été de réaliser la gestion du robot. Il s'agit de faire en sorte que toutes les
+        parties foncitonnent ensemble? Cependant le temps que chaque partie sois réalisées, j'ai du aussi designer la
+        gestion de l'alimentation du robot
+    </p>
+
+    <h4> Gestion du Robot </h4>
+    <h5> réalisation de l’alimentation du robot</h5>
+    <p>
+        La fabrication de la carte permettant l’alimentation du robot à l’aide des supercondensateurs a commencé par un
+        projet kicad. Après analyse de ce dont j’avais besoin en terme de composant, j’ai commencé à réaliser le schéma
+        kicad de ma carte sur kicad 6 comme suit :
+    </p>
+
+    <div class="text-center my-4">
+        <img src="../../images/projet2/gestion_batterie.jpg" alt="Contexte du projet 2"
+            class="img-fluid rounded border shadow">
+    </div>
+    <p>
+        Après le schéma complété et vérifié sans faute, je me suis donc attelé au routage de ma carte :
+    </p>
+
+    <div class="text-center my-4">
+        <img src="../../images/projet2/routage_batterie.png" alt="Contexte du projet 2"
+            class="img-fluid rounded border shadow">
+    </div>
+    <p>
+        NB :Ici les pistes sont réalisées à l’aide de zone, ceci minimise les risques de fonte de piste à cause de
+        l'importante intensité imposée aux supercondensateurs lors de la charge.
+
+    </p>
+
+    <div class="text-center my-4">
+        <img src="../../images/projet2/rendu_sur_robot.png" alt="Contexte du projet 2"
+            class="img-fluid rounded border shadow">
+    </div>
+
+    <p>
+        Et voici le rendu sur le robot. Cette partie du projet c'est réaliser sans problème. Je pouvais donc commencer à
+        réaliser la partie assemblage du robot
+
+    </p>
+
+    <h5> Unification des cartes du robot </h5>
+    <p>
+        Cette partie est essentiellement du code, ainsi je vais l'illustrer en ne mettant que des screens du code que
+        j'ai réalisé
+
+    </p>
+    <p>
+        Pour l'expliquer briévement. J'ai fait en sorte que le robot puisse être controlé via bluetooth au cas où la
+        detection de balise ne foncitonne pas. En envoyant un caractère en particulier j'actionnais ou non les moteurs.
+        Ensuite j'ai coder la fonction de detection de couleur qui permettera au robot de se stopper quand il verra la
+        ligne d'arriver
+        Après je n'ai fait qu'implémenter les codes de mes partenaires pour faire pleinement foncitonner le robot
+
+    </p>
+    <div class="text-center my-4">
+        <img src="../../images/projet2/code_loop.png" alt="Contexte du projet 2"
+            class="img-fluid rounded border shadow">
+    </div>
+    <div class="text-center my-4">
+        <img src="../../images/projet2/couleur.png" alt="Contexte du projet 2" class="img-fluid rounded border shadow">
+    </div>
+
+    <p>
+        Les autres parties n'ayant pas été réaliser par moi je ne préfère pas les incorporer dans mon porfolio.
+    </p>
+
+    <h5> Conclusion réaliser avec l'ensemble du groupe </h5>
+
+    <p>
+        Lors de ce projet, nous avons appris à être plus autonomes et à gérer notre temps de travail sur chaque
+        fonction. Dans la globalité du projet, chaque fonction, séparément, a été réussie et fonctionnelle. Cependant,
+        l’une d’entre elle n’a pas pu être installée sur le robot. La raison est que nous avons perdu chacun du temps
+        sur le codage de notre carte. Cela nous a empêché de passer plus rapidement aux tests sur le robot.
+        Nous savons néanmoins que notre robot était fonctionnel lors de la course, car il détectait la balise en
+        avançant vers elle et pouvait esquiver les obstacles grâce au sonar.
+
+        En conclusion, le projet aurait été complètement abouti avec quelques heures de travail supplémentaire pour que
+        le robot soit entièrement opérationnel et respecte entièrement le cahier des charges.
+
+
+    </p>
+</body>
+
+<footer>OLIVIER Henri Portfolio </footer>S
